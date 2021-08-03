@@ -125,6 +125,25 @@ public class Grafos {
 	
 	
 	
+	public int agregarVertice(String id) {
+		Vertice newVertice = new Vertice(id);
+		lista_vert.add(newVertice);
+		
+		return cantVertices()-1;
+	}
+	
+	public void agregarVertice(String id, int pos) {
+		if(pos >= cantVertices() ) {
+			lista_vert.setSize(pos+1);
+		}
+		
+		Vertice newVertice = new Vertice(id);
+		lista_vert.set(pos, newVertice);
+	}
+	
+	
+	
+	
 	
 	
 	
