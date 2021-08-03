@@ -1,5 +1,7 @@
 package grafos;
 
+import grafos.Vertice;
+import grafos.Arista;
 import java.awt.List;
 import java.util.*; //nos sire para usar la clase Vector
 public class Grafos {
@@ -92,7 +94,7 @@ public class Grafos {
 	
 	
 	/*metodo que une dos aristas
-		como primer parametros recibe un desde que es la arista de inicio
+		como primer parametros recibe un desde que es la de inicio
 		como segundo parametro recibe una arista de destino 
 		como tercer paremetro recibe un valor de tipo Arista que es la arista que se tendra que conectar
 	 */
@@ -113,7 +115,7 @@ public class Grafos {
 			lista_vert.set(hasta, new Vertice(null));
 		}
 		
-		vertice(desde).unir(a);
+		vertice(desde).unirAristas(a);
 	}
 	
 	
