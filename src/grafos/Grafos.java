@@ -38,11 +38,44 @@ public class Grafos {
 		return lista_vert.size();
 	}
 	
+	/* 	metodo de tipo arista que tiene la funcoin de siesq 
+		la cantidad de vertices aun es mayor q la variable desde
+		y siesq la variable hasta tambien es menor q la cantidad de vertices
+		entonces llamanos a los emtods para que se guarde los dato
+		y retornamos el objeto arista 
+	*/
+	public Arista arista(int desde, int hasta) {
+		Arista a = null;
+		Vertice v;
+		int cantVert = cantVertices();
+		
+		if(desde < cantVert && hasta < cantVert) {
+			v = vertice(desde);
+			a = v.adyacente(hasta);
+		}
+		return a;
+	}
 	
 	
 	
+	// este metodo nos retorna los elemtosAt casteado a un objeto de tipo vertice
+	public Vertice vertice(int k) {
+		return (Vertice)lista_vert.elementAt(k);
+	}
 	
 	
+	
+	//el costo es lo que nos costaria ir desde una arista hasta otra arista
+	public int costo(int desde, int hasta) {
+		Arista a = arista(desde, hasta);
+		int r = 0;
+		
+		if( a != null ) {
+			r = a.costo;
+		}
+		
+		return r;
+	}
 	
 	
 	/*metodo que une dos aristas
